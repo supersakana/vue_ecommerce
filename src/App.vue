@@ -1,7 +1,18 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <nav class="flex justify-between">
+    <router-link to="/">
+      <img src="./assets/logo.png" alt="logo" class="w-[40px] h-[40px]">
+    </router-link>
+
+    <div id="nav-links" class="flex items-center justify-center gap-x-3 text-sm md:text-lg duration-500">
+      <router-link to="/">Home</router-link>
+      <router-link to="/products">Products</router-link>
+      <router-link to="/services">Services</router-link>
+    </div>
+
+    <router-link to="/cart">
+      <ion-icon name="cart-outline" class="font-bold text-3xl"></ion-icon>
+    </router-link>
   </nav>
   <router-view/>
 </template>
@@ -11,7 +22,6 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 
@@ -25,6 +35,6 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: #1366ea;
 }
 </style>
