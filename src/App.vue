@@ -1,6 +1,6 @@
 <template>
   <div class="h-screen bg-main bg-cover bg-center">
-    <nav class="flex justify-between bg-white p-3">
+    <nav class="flex justify-between bg-white p-5">
       <router-link to="/">
         <img src="./assets/logo.png" alt="logo" class="w-[40px] h-[40px]">
       </router-link>
