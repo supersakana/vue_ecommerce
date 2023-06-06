@@ -1,10 +1,7 @@
 <template>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         <div :key="product.id" v-for="(product) in products">
-            <div>
-                <h6 class="font-bold">{{ product.title }}</h6>
-                <h6>{{ product.description }}</h6>
-            </div>
+            <Product :product="product" />
         </div>
     </div>
 </template>
@@ -12,11 +9,13 @@
 <script>
 import { useProductStore } from '@/store/products';
 import { computed } from 'vue'
+import Product from '../components/Product.vue'
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
-  name: 'Product',
+  name: 'Products',
   components: {
+    Product
   },
   setup() {
     const storeProducts = useProductStore()
