@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <h1>ZTV</h1>
-    <h2>Stream smarter not harder</h2>
+    <h1>This is the homepage</h1>
   </div>
 </template>
 
