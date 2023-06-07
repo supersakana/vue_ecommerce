@@ -1,9 +1,10 @@
 import { defineStore } from 'pinia'
+import { useLocalStorage } from "@vueuse/core"
 // import uniqid from 'uniqid';
 
 export const useProductStore = defineStore("products", {
     state: () => ({
-        cart: [],
+        cart: useLocalStorage('cart', []),
         products: [
             {
                 id: 0,
