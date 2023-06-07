@@ -1,5 +1,5 @@
 <template>
-    <div class="p-3 max-w-[260px] h-full flex items-center justify-center">
+    <div class="p-3 max-w-[300px] h-full flex items-center justify-center">
         <img :src="product.img">
     </div>
 
@@ -11,18 +11,28 @@
 
         <h6 class="text-sm">{{ product.description }}</h6>
 
-        <button class="bg-blue-500 hover:bg-blue-400 text-white p-2 text-sm font-bold rounded-md duration-500">
-            Add to Cart
+        <button class="bg-blue-500 hover:bg-blue-400 text-white py-2 px-3 text-sm font-bold rounded-md duration-500 my-3"
+                @click="this.storeProducts.addToCart(product.id)">
+          Add to Cart
         </button>
     </div>
 </template>
   
 <script>
+import { useProductStore } from '@/store/products';
+
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'Product',
   props: {
     product: { type: Object }
+  },
+  setup() {
+    const storeProducts = useProductStore()
+
+    return {
+      storeProducts,
+    }
   },
 }
 </script>

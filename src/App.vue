@@ -1,7 +1,7 @@
 <template>
   <div class="h-screen bg-main bg-cover bg-center">
     <Nav />
-    <div class="p-5">
+    <div class="px-5 pt-[80px]">
       <router-view/>
     </div>
   </div>
@@ -33,5 +33,10 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #1366ea;
+}
+
+nav{
+  background-color: rgba(255, 255, 255, 0.62);  
+  backdrop-filter: blur(5px);
 }
 </style>
