@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1 class="text-xl font-bold">This is the products page</h1>
+    <h1 class="text-2xl font-bold text-center mb-6">Welcome to my room!</h1>
     <Products />
   </div>
 </template>

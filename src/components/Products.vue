@@ -1,6 +1,6 @@
 <template>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div :key="product.id" v-for="(product) in products">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+        <div class="flex flex-col justify-between items-center" :key="product.id" v-for="(product) in products">
             <Product :product="product" />
         </div>
     </div>

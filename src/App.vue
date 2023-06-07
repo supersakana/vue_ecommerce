@@ -1,7 +1,9 @@
 <template>
   <div class="h-screen bg-main bg-cover bg-center">
     <Nav />
-    <router-view/>
+    <div class="p-5">
+      <router-view/>
+    </div>
   </div>
 </template>
 

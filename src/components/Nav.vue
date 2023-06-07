@@ -1,7 +1,7 @@
 <template>
     <nav class="flex justify-between bg-white p-5">
       <router-link to="/">
-        <img src="../assets/logo.png" alt="logo" class="w-[40px] h-[40px]">
+        <img src="../assets/logo.png" alt="logo" class="w-[40px] h-[40px] hover:scale-[1.1] duration-500">
       </router-link>
 
       <div id="nav-links" class="flex items-center justify-center gap-x-3 text-sm md:text-lg duration-500">
@@ -11,7 +11,7 @@
       </div>
 
       <router-link to="/cart">
-        <ion-icon name="cart-outline" class="font-bold text-3xl"></ion-icon>
+        <ion-icon name="cart-outline" class="font-bold text-3xl hover:scale-[1.1] duration-500"></ion-icon>
       </router-link>
     </nav>
 </template>

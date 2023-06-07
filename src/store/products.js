@@ -6,23 +6,45 @@ export const useProductStore = defineStore("products", {
         products: [
             {
                 id: uniqid(),
-                title: 'Item 1',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                title: 'Vans',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                img: require('../assets/items/vans.png'),
+                price: 50
             },
             {
                 id: uniqid(),
-                title: 'Item 2',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                title: 'Melon Hat',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                img: require('../assets/items/hat.png'),
+                price: 35
             },
             {
                 id: uniqid(),
-                title: 'Item 3',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                title: 'Dreamland Glasses',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                img: require('../assets/items/sunglasses.png'),
+                price: 20
             },
             {
                 id: uniqid(),
-                title: 'Item 4',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                title: 'Flip Flops',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                img: require('../assets/items/flops.png'),
+                price: 50
+            },
+            {
+                id: uniqid(),
+                title: 'RVCA Hat',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                img: require('../assets/items/hat2.png'),
+                price: 35
+            },
+            {
+                id: uniqid(),
+                title: 'Smith Glasses',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                img: require('../assets/items/sunglasses2.png'),
+                price: 20
             },
         ]
     }),
