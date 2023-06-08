@@ -3,6 +3,7 @@
       <h2 v-if="cart.length < 1" class="text-2xl font-bold text-center mb-6">Your cart is empty!</h2>
       <h2 v-else class="text-2xl font-bold text-center mb-6">Your cart</h2>
       <CartProducts />
+      <span>{{ this.storeProducts.cartTotal }}</span>
     </div>
 </template>
 

@@ -54,6 +54,11 @@ export const useProductStore = defineStore("products", {
         cartAmount: (state) => {
             if(state.cart.length >= 99) return '99'
             return state.cart.length
+        },
+        cartTotal: (state) => {
+            const prices = state.cart.map(item => item.price)
+            const total = prices.reduce((current, price) => current + price)
+            return total
         }
     },
     actions: {

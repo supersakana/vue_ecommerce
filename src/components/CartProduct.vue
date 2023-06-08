@@ -1,16 +1,18 @@
 <template>
-    <div class="p-3 max-w-[300px] h-full flex items-center justify-center">
-        <img :src="product.img">
+  <div class="flex items-center justify-between">
+    <div class="flex items-center">
+      <div class="p-3 max-w-[150px] h-full flex items-center justify-center">
+          <img :src="product.img">
+      </div>
+
+      <div>
+          <h6 class="font-bold">{{ product.title }}</h6>
+          <h6 class="text-sm">{{ product.description }}</h6>
+      </div>
     </div>
 
-    <div class="self-end">
-        <div class="flex items-center justify-between">
-            <h6 class="font-bold">{{ product.title }}</h6>
-            <span class="text-2xl font-bold">${{ product.price }}</span>
-        </div>
-
-        <h6 class="text-sm">{{ product.description }}</h6>
-    </div>
+    <span class="text-xl">${{ product.price }}</span>
+  </div>
 </template>
   
 <script>
