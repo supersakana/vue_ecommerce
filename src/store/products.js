@@ -56,6 +56,8 @@ export const useProductStore = defineStore("products", {
             return state.cart.length
         },
         cartTotal: (state) => {
+            if(state.cart.length < 1) return
+
             const prices = state.cart.map(item => item.price)
             const total = prices.reduce((current, price) => current + price)
             return total

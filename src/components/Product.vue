@@ -1,5 +1,5 @@
 <template>
-    <div class="p-3 max-w-[300px] h-full flex items-center justify-center">
+    <div class="p-3 max-w-[250px] h-full flex items-center justify-center">
         <img :src="product.img">
     </div>
 
