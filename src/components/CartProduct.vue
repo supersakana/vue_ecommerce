@@ -1,7 +1,7 @@
 <template>
-  <div class="flex items-center justify-between">
-    <div class="flex items-center">
-      <div class="p-3 max-w-[150px] h-full flex items-center justify-center">
+  <div class="flex items-center justify-between gap-x-4 my-4">
+    <div class="flex items-center gap-x-4">
+      <div class="p-3 max-w-[100px] h-[100px] md:max-w-[150px] md:h-[150px] h-full flex items-center justify-center border duration-500">
           <img :src="product.img">
       </div>
 
@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <span class="text-xl">${{ product.price }}</span>
+    <span class="text-lg">${{ product.price }}</span>
   </div>
 </template>
   

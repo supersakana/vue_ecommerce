@@ -1,5 +1,5 @@
 <template>
-    <nav class="flex justify-between py-5 px-7 fixed w-screen">
+    <nav class="flex justify-between py-5 px-10 fixed w-screen">
       <router-link to="/">
         <img src="../assets/logo.png" alt="logo" class="w-[40px] h-[40px] hover:scale-[1.1] duration-500">
       </router-link>
