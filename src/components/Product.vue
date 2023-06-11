@@ -12,7 +12,7 @@
         <h6 class="text-sm">{{ product.description }}</h6>
 
         <button class="bg-blue-500 hover:bg-blue-400 text-white py-2 px-3 text-sm font-bold rounded-md duration-500 my-3 shadow-md w-[110px]"
-                @click="addToCart($event, product.id)">
+                @click="addToCart(product.id)">
           Add to Cart
           <ion-icon :id="`check-${product.id}`" class="hidden" name="checkmark"></ion-icon>
         </button>
@@ -36,20 +36,8 @@ export default {
     }
   },
   methods: {
-    addToCart(e, id){
+    addToCart(id){
       this.storeProducts.addToCart(id)
-      e.target.innerHTML = '<p>Added &#9989;<p>'
-      e.target.classList.remove('bg-blue-500', 'hover:bg-blue-400', 'duration-500')
-      e.target.classList.add('bg-[#8b8b8b]')
-      e.target.disabled = true
-
-      setTimeout(() => {
-        // console.log('Foo bar')
-        e.target.innerText = 'Add to cart'
-        e.target.classList.add('bg-blue-500', 'hover:bg-blue-400', 'duration-500')
-        e.target.classList.remove('bg-[#8b8b8b]')
-        e.target.disabled = false
-      }, 1500)
     },
   },
 }

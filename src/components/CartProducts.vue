@@ -7,7 +7,7 @@
         <hr class="my-7">
 
         <div class="flex items-center justify-between text-2xl font-bold">
-          <span>Total</span>
+          <span>Total:</span>
 
           <div class="flex items-center gap-x-3">
             <span class="text-sm text-gray-500">USD</span>

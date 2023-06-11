@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen bg-main bg-cover bg-center">
+  <div class="min-h-screen bg-main bg-cover bg-center z-0">
     <Nav />
     <div class="px-10 py-[80px]">
       <router-view/>
@@ -39,4 +39,10 @@ nav{
   background-color: rgba(255, 255, 255, 0.62);  
   backdrop-filter: blur(5px);
 }
+
+.glass{
+  background-color: rgba(172, 172, 172, 0.62);  
+  backdrop-filter: blur(5px);
+}
+
 </style>

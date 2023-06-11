@@ -4,18 +4,24 @@
             <Product :product="product" />
         </div>
     </div>
+    <button @click="testFunc">Test</button>
+    <div id="modal" v-if="this.display_modal" class="">
+      <AddCartModal />
+    </div>
 </template>
   
 <script>
 import { useProductStore } from '@/store/products';
 import { computed } from 'vue'
 import Product from '../components/Product.vue'
+import AddCartModal from './AddCarModal.vue';
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'Products',
   components: {
-    Product
+    Product,
+    AddCartModal
   },
   setup() {
     const storeProducts = useProductStore()
@@ -26,5 +32,16 @@ export default {
       products
     }
   },
+  data(){
+    return {
+      display_modal: false
+    }
+  },
+  methods: {
+    testFunc(){
+      console.log('work')
+      this.display_modal = true
+    }
+  }
 }
 </script>
