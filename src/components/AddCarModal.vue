@@ -7,7 +7,7 @@
           <div class="font-bold text-2xl">
             Added to cart
           </div>
-          <ion-icon name="close" class="text-3xl cursor-pointer hover:scale-[1.2] hover:text-red-500 duration-500"></ion-icon>
+          <ion-icon @click="closeModal" name="close" class="text-3xl cursor-pointer hover:scale-[1.1] hover:text-red-500 duration-400"></ion-icon>
         </div>
       </div>
     </div>
@@ -17,5 +17,10 @@
 
 export default {
   name: 'AddCartModal',
+  methods: {
+    closeModal(){
+      this.$emit('close-modal')
+    }
+  },
 }
 </script>

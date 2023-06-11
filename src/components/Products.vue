@@ -4,9 +4,9 @@
             <Product :product="product" />
         </div>
     </div>
-    <button @click="testFunc">Test</button>
+    <button @click="toggleModal">Test</button>
     <div id="modal" v-if="this.display_modal" class="">
-      <AddCartModal />
+      <AddCartModal @close-modal="toggleModal" />
     </div>
 </template>
   
@@ -38,10 +38,9 @@ export default {
     }
   },
   methods: {
-    testFunc(){
-      console.log('work')
-      this.display_modal = true
-    }
+    toggleModal(){
+      this.display_modal = !this.display_modal
+    },
   }
 }
 </script>
