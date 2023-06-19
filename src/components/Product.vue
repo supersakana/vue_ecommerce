@@ -38,6 +38,7 @@ export default {
   methods: {
     addToCart(id){
       this.storeProducts.addToCart(id)
+      this.$emit('popup-cart-modal', id)
     },
   },
 }

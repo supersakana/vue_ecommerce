@@ -1,14 +1,13 @@
 <template>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-9">
         <div class="flex flex-col justify-between items-center" :key="product.id" v-for="(product) in products">
-            <Product :product="product" />
+            <Product @popup-cart-modal="displayCartModal" :product="product" />
         </div>
     </div>
-    <button @click="toggleModal">Test</button>
     
     <Transition  name="fade">
       <div id="modal" v-if="this.display_modal" class="">
-        <AddCartModal @close-modal="toggleModal" />
+        <AddCartModal @close-modal="toggleModal" :product="modal_item" />
       </div>
     </Transition>
 </template>
@@ -37,13 +36,19 @@ export default {
   },
   data(){
     return {
-      display_modal: false
+      display_modal: false,
+      modal_item: {}
     }
   },
   methods: {
     toggleModal(){
       this.display_modal = !this.display_modal
     },
+    displayCartModal(id){
+      const item = this.products.find(item => item.id === id)
+      this.modal_item = item
+      this.toggleModal()
+    }
   }
 }
 </script>

@@ -9,6 +9,7 @@
           </div>
           <ion-icon @click="closeModal" name="close" class="text-3xl cursor-pointer hover:scale-[1.1] hover:text-red-500 duration-400"></ion-icon>
         </div>
+        <div>{{ product }}</div>
       </div>
     </div>
 </template>
@@ -17,6 +18,9 @@
 
 export default {
   name: 'AddCartModal',
+  props: {
+    product: { type: Object }
+  },
   methods: {
     closeModal(){
       this.$emit('close-modal')
