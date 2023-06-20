@@ -5,11 +5,11 @@
         </div>
     </div>
     
-    <Transition  name="fade">
-      <div id="modal" v-if="this.display_modal" class="">
+    <!-- <Transition  name="fade">
+      <div id="modal" v-if="this.display_modal" class=""> -->
         <AddCartModal @close-modal="toggleModal" :product="modal_item" />
-      </div>
-    </Transition>
+      <!-- </div>
+    </Transition> -->
 </template>
   
 <script>
@@ -37,7 +37,7 @@ export default {
   data(){
     return {
       display_modal: false,
-      modal_item: {}
+      modal_item: this.products[1]
     }
   },
   methods: {
