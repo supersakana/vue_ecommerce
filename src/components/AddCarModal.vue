@@ -28,10 +28,11 @@
         </div>
 
         <div class="flex flex-col gap-y-2 text-center px-5 my-4">
-          <button class="bg-gradient-to-r from-[#1366ea] to-[#038df8] hover:from-[#288eee] hover:to-[#38b6f9] hover:scale-[1.03] text-white font-bold px-4 py-2 rounded-md duration-400">Continue Shopping</button>
-          <button class="border-2 hover:scale-[1.03] hover:bg-gray-100 font-bold px-4 py-2 rounded-md duration-400">View cart & checkout</button>
+          <button @click="closeModal" class="bg-gradient-to-r from-[#1366ea] to-[#038df8] hover:from-[#288eee] hover:to-[#38b6f9] hover:scale-[1.03] text-white font-bold px-4 py-2 rounded-md duration-400">Continue Shopping</button>
+          <router-link to="/cart">
+            <button class="border-2 hover:scale-[1.03] hover:bg-gray-100 font-bold px-4 py-2 rounded-md duration-400 w-full">View cart & checkout</button>
+          </router-link>
         </div>
-
       </div>
     </div>
 </template>
