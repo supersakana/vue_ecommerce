@@ -1,9 +1,5 @@
 <template>
     <div class="max-w-[800px]">
-        <!-- Temp -->
-        <div>{{ storeProducts.cartTable }}</div>
-        <!-- Temp -->
-
         <div :key="product.id" v-for="(product) in storeProducts.cartUniq">
             <CartProduct :product="product" :quantity="storeProducts.cartTable[product.id]" />
         </div>
