@@ -84,9 +84,15 @@ export const useProductStore = defineStore("products", {
     },
     actions: {
         addToCart(id) {
-            console.log(id)
             const item = this.products.find(item => item.id === id)
             this.cart = [...this.cart, item]
+        },
+        removeFromCart(id) {
+            const item = this.cart.find(item => item.id === id)
+            const i =this.cart.indexOf(item)
+
+            this.cart.splice(i, 1)
+            // ^^^ look into this
         },
     }
 })

@@ -2,7 +2,7 @@
     <div class="flex flex-col items-center justify-between gap-y-3">
         <ion-icon @click="addToCart(product.id)" name="caret-up" class="text-xl text-gray-400 cursor-pointer hover:text-gray-300 duration-500"></ion-icon>
         <div>{{ quantity }}</div>
-        <ion-icon name="caret-down" class="text-xl text-gray-400 cursor-pointer hover:text-gray-300 duration-500"></ion-icon>
+        <ion-icon @click="removeFromCart(product.id)" name="caret-down" class="text-xl text-gray-400 cursor-pointer hover:text-gray-300 duration-500"></ion-icon>
     </div>
   </template>
     
