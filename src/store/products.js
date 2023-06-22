@@ -84,6 +84,7 @@ export const useProductStore = defineStore("products", {
     },
     actions: {
         addToCart(id) {
+            console.log(id)
             const item = this.products.find(item => item.id === id)
             this.cart = [...this.cart, item]
         },

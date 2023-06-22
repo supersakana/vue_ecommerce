@@ -2,14 +2,8 @@
   <div class="flex items-center justify-between gap-x-4 my-4">
     <div class="flex items-center gap-x-4">
 
-      <!-- Price toggler component -->
-      <!-- <div class="flex flex-col items-center justify-between gap-y-3">
-        <ion-icon name="caret-up" class="text-xl text-gray-400 cursor-pointer hover:text-gray-300 duration-500"></ion-icon>
-        <div>{{ quantity }}</div>
-        <ion-icon name="caret-down" class="text-xl text-gray-400 cursor-pointer hover:text-gray-300 duration-500"></ion-icon>
-      </div> -->
-      <CartQntToggler :quantity="quantity" />
-      <!-- Price toggler component -->
+      <CartQntToggler :quantity="quantity" 
+                      :product="product" />
 
       <div class="p-3 max-w-[100px] h-[100px] md:max-w-[150px] md:h-[150px] h-full flex items-center justify-center border duration-500">
           <img :src="product.img">
