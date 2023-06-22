@@ -7,42 +7,42 @@ export const useProductStore = defineStore("products", {
         cart: useLocalStorage('cart', []),
         products: [
             {
-                id: 0,
+                id: '0',
                 title: 'Vans',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 img: require('../assets/items/vans.png'),
                 price: 50
             },
             {
-                id: 1,
+                id: '1',
                 title: 'Melon Hat',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 img: require('../assets/items/hat.png'),
                 price: 35
             },
             {
-                id: 2,
+                id: '2',
                 title: 'Dreamland Glasses',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 img: require('../assets/items/sunglasses.png'),
                 price: 20
             },
             {
-                id: 3,
+                id: '3',
                 title: 'Flip Flops',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 img: require('../assets/items/flops.png'),
                 price: 50
             },
             {
-                id: 4,
+                id: '4',
                 title: 'RVCA Hat',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 img: require('../assets/items/hat2.png'),
                 price: 35
             },
             {
-                id: 5,
+                id: '5',
                 title: 'Smith Glasses',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 img: require('../assets/items/sunglasses2.png'),
@@ -61,6 +61,25 @@ export const useProductStore = defineStore("products", {
             const prices = state.cart.map(item => item.price)
             const total = prices.reduce((current, price) => current + price)
             return total
+        },
+        cartTable: (state) => {
+            const table = {}
+            state.cart.forEach((item) => {
+                if(table[item.id]){
+                    table[item.id]++ 
+                } else {
+                    table[item.id] = 1
+                }
+            })
+            return table
+        },
+        cartUniq: (state) => {
+            const uniq = []
+            state.cart.forEach((item) => {
+                const exists = uniq.some(i => i.id == item.id)
+                if(!exists) uniq.push(item)
+            })
+            return uniq
         }
     },
     actions: {

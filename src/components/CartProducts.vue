@@ -1,5 +1,10 @@
 <template>
     <div class="max-w-[800px]">
+        <!-- Temp -->
+        <div>{{ storeProducts.cartTable }}</div>
+        <div>{{ storeProducts.cartUniq }}</div>
+        <!-- Temp -->
+
         <div :key="product.id" v-for="(product) in cart">
             <CartProduct :product="product" />
         </div>
