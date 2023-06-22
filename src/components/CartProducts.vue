@@ -5,7 +5,7 @@
         <!-- Temp -->
 
         <div :key="product.id" v-for="(product) in storeProducts.cartUniq">
-            <CartProduct :product="product" />
+            <CartProduct :product="product" :quantity="storeProducts.cartTable[product.id]" />
         </div>
 
         <hr class="my-7">
