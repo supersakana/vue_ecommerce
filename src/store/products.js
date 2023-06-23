@@ -11,88 +11,81 @@ export const useProductStore = defineStore("products", {
                 title: 'Vans',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 img: require('../assets/items/vans.png'),
-                price: 50
+                price: 50, 
+                quantity: 0
             },
             {
                 id: '1',
                 title: 'Melon Hat',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 img: require('../assets/items/hat.png'),
-                price: 35
+                price: 35,
+                quantity: 0
             },
             {
                 id: '2',
                 title: 'Dreamland Glasses',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 img: require('../assets/items/sunglasses.png'),
-                price: 20
+                price: 20,
+                quantity: 0
             },
             {
                 id: '3',
                 title: 'Flip Flops',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 img: require('../assets/items/flops.png'),
-                price: 50
+                price: 50,
+                quantity: 0
             },
             {
                 id: '4',
                 title: 'RVCA Hat',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 img: require('../assets/items/hat2.png'),
-                price: 35
+                price: 35,
+                quantity: 0
             },
             {
                 id: '5',
                 title: 'Smith Glasses',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 img: require('../assets/items/sunglasses2.png'),
-                price: 20
+                price: 20,
+                quantity: 0
             },
         ]
     }),
     getters: {
         cartAmount: (state) => {
             if(state.cart.length >= 99) return '99'
-            return state.cart.length
+
+            const quantities = state.cart.map(item => item.quantity)
+            return quantities.reduce((current, qnt) => current + qnt)
         },
         cartTotal: (state) => {
             if(state.cart.length < 1) return
 
-            const prices = state.cart.map(item => item.price)
+            const prices = state.cart.map(item => item.price * item.quantity)
             const total = prices.reduce((current, price) => current + price)
             return total
         },
-        cartTable: (state) => {
-            const table = {}
-            state.cart.forEach((item) => {
-                if(table[item.id]){
-                    table[item.id]++ 
-                } else {
-                    table[item.id] = 1
-                }
-            })
-            return table
-        },
-        cartUniq: (state) => {
-            const uniq = []
-            state.cart.forEach((item) => {
-                const exists = uniq.some(i => i.id == item.id)
-                if(!exists) uniq.push(item)
-            })
-            return uniq
-        }
     },
     actions: {
         addToCart(id) {
-            const item = this.products.find(item => item.id === id)
-            this.cart = [...this.cart, item]
+            if(this.cart.map(item => item.id).includes(id)){
+                this.cart.find(item => item.id == id).quantity++
+            } else {
+                const newItem = this.products.find(item => item.id === id)
+                this.cart = [...this.cart, newItem]
+            }
         },
-        removeFromCart(id) {
-            const item = this.cart.find(item => item.id === id)
-            const i =this.cart.indexOf(item)
+        // removeFromCart(id) {
+        //     const item = this.cart.find(item => item.id === id)
+        //     const i =this.cart.lastIndexOf(item)
 
-            this.cart.splice(i, 1)
-            // ^^^ look into this
-        },
+        //     this.cart.splice(i, 1)
+        //     // ^^^ look into this
+        // },
     }
 })

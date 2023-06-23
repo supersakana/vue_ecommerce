@@ -1,7 +1,7 @@
 <template>
     <div class="max-w-[800px]">
-        <div :key="product.id" v-for="(product) in storeProducts.cartUniq">
-            <CartProduct :product="product" :quantity="storeProducts.cartTable[product.id]" />
+        <div :key="product.id" v-for="(product) in cart">
+            <CartProduct :product="product" />
         </div>
 
         <hr class="my-7">
