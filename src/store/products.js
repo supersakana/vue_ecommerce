@@ -80,12 +80,11 @@ export const useProductStore = defineStore("products", {
                 this.cart = [...this.cart, newItem]
             }
         },
-        // removeFromCart(id) {
-        //     const item = this.cart.find(item => item.id === id)
-        //     const i =this.cart.lastIndexOf(item)
+        removeFromCart(id) {
+            const updated = this.cart
 
-        //     this.cart.splice(i, 1)
-        //     // ^^^ look into this
-        // },
+            updated.find(item => item.id == id).quantity--
+            this.cart = updated
+        },
     }
 })
