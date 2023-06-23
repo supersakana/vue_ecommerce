@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-main bg-cover bg-center z-0">
     <Nav />
-    <div class="px-10 py-[80px]">
+    <div class="px-5 md:px-10 py-[80px]">
       <router-view/>
     </div>
   </div>

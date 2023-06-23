@@ -4,14 +4,14 @@
 
       <CartQntToggler :product="product" />
 
-      <div class="p-3 max-w-[100px] h-[100px] md:max-w-[150px] md:h-[150px] h-full flex items-center justify-center border duration-500">
+      <div class="p-3 max-w-[100px] min-h-[100px] md:max-w-[150px] md:min-h-[150px] h-full flex items-center justify-center border duration-500">
           <img :src="product.img">
       </div>
 
       <div class="flex flex-col justify-center">
         <div>
           <h6 class="font-bold">{{ product.title }}</h6>
-          <h6 class="text-sm">{{ product.description }}</h6>
+          <h6 class="text-xs md:text-sm">{{ product.description }}</h6>
         </div>
 
         <div class="mt-4">
