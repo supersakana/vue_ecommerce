@@ -59,6 +59,7 @@ export const useProductStore = defineStore("products", {
     getters: {
         cartAmount: (state) => {
             if(state.cart.length >= 99) return '99'
+            if(state.cart.length < 1) return
 
             const quantities = state.cart.map(item => item.quantity)
             return quantities.reduce((current, qnt) => current + qnt)
@@ -77,6 +78,7 @@ export const useProductStore = defineStore("products", {
                 this.cart.find(item => item.id == id).quantity++
             } else {
                 const newItem = this.products.find(item => item.id === id)
+                newItem.quantity++
                 this.cart = [...this.cart, newItem]
             }
         },
@@ -86,5 +88,11 @@ export const useProductStore = defineStore("products", {
             updated.find(item => item.id == id).quantity--
             this.cart = updated
         },
+        removeAll(id){
+            const updated = this.cart
+
+            this.products.find(item => item.id == id).quantity = 0
+            this.cart = updated.filter(item => item.id !== id)
+        }
     }
 })

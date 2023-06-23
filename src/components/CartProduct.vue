@@ -8,9 +8,18 @@
           <img :src="product.img">
       </div>
 
-      <div>
+      <div class="flex flex-col justify-center">
+        <div>
           <h6 class="font-bold">{{ product.title }}</h6>
           <h6 class="text-sm">{{ product.description }}</h6>
+        </div>
+
+        <div class="mt-4">
+          <span class="text-sm text-gray-400 hover:text-red-500 hover:underline duration-500 cursor-pointer"
+                @click="removeAll(product.id)">
+            {{ removeItemText() }}
+          </span>
+        </div>
       </div>
     </div>
 
@@ -29,13 +38,21 @@ export default {
     CartQntToggler
   },
   props: {
-    product: { type: Object },
-    quantity: { type: Number }
+    product: { type: Object }
   },
   setup() {
     const storeProducts = useProductStore()
 
     return storeProducts
+  },
+  methods: {
+    removeItemText() {
+      if(this.product.quantity < 2){
+        return 'Remove'
+      } else {
+        return 'Remove All'
+      }
+    },
   },
 }
 </script>
