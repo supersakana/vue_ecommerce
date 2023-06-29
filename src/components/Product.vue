@@ -11,20 +11,30 @@
 
         <h6 class="text-sm">{{ product.description }}</h6>
 
-        <button class="bg-blue-500 hover:bg-blue-400 text-white py-2 px-3 text-sm font-bold rounded-md duration-500 my-3 shadow-md w-[110px]"
-                @click="addToCart(product.id)">
-          Add to Cart
-          <ion-icon :id="`check-${product.id}`" class="hidden" name="checkmark"></ion-icon>
-        </button>
+        <div class="flex justify-between items-center gap-x-3">
+          <button class="bg-blue-500 hover:bg-blue-400 text-white py-2 px-3 text-sm font-bold rounded-md duration-500 my-3 shadow-md w-[110px] flex-1"
+                  @click="addToCart(product.id)">
+            Add to Cart
+            <ion-icon :id="`check-${product.id}`" class="hidden" name="checkmark"></ion-icon>
+          </button>
+
+          <QntToggler />
+        </div>
+        
     </div>
 </template>
   
 <script>
 import { useProductStore } from '@/store/products';
+import QntToggler from './QntToggler.vue';
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'Product',
+  components: {
+    // eslint-disable-next-line vue/no-unused-components
+    QntToggler
+  },
   props: {
     product: { type: Object }
   },
